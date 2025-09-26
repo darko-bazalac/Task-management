@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fleet Tasks</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+</head>
+
+<body>
+  <button id="createTaskBtn" class="create-task-btn">Create Task</button>
+  <h2>Task list</h2>
+  <!-- Top stats boxes -->
+  <div class="stats-container">
+    <div class="stat-box">
+      <span class="icon alert">⚠️</span>
+      <div>
+        <strong>15 Alerts</strong>
+        <p>Customer delivery</p>
+      </div>
+    </div>
+    <div class="stat-box">
+      <span class="icon emergency">❄️</span>
+      <div>
+        <strong>0 Emergencies</strong>
+        <p>Customer delivery</p>
+      </div>
+    </div>
+    <div class="stat-box">
+      <span class="icon recovery">⏰</span>
+      <div>
+        <strong>14 Late recovery</strong>
+        <p>Customer recovery</p>
+      </div>
+    </div>
+    <div class="stat-box">
+      <span class="icon departures">✅</span>
+      <div>
+        <strong>5 Departures</strong>
+        <p>Refuel/Dash/Box/Tire</p>
+      </div>
+    </div>
+    <div class="stat-box">
+      <span class="icon check">🚗</span>
+      <div>
+        <strong>130 Late check</strong>
+        <p>Check vehicle</p>
+      </div>
+    </div>
+  </div>
+  <div class="filters">
+    <input type="search" id="searchBox" placeholder="Search..." />
+
+    <div class="assignee-counter">
+      <div class="assignee-bubble">
+        <span class="bubble-text">GT</span>
+        <span class="task-count">3</span>
+      </div>
+      <div class="assignee-bubble">
+        <span class="bubble-text">AM</span>
+        <span class="task-count">2</span>
+      </div>
+      <div class="assignee-bubble">
+        <span class="bubble-text">JS</span>
+        <span class="task-count">1</span>
+      </div>
+      <div class="assignee-bubble">
+        <span class="bubble-text">MK</span>
+        <span class="task-count">1</span>
+      </div>
+    </div>
+  </div>
+  <main class="container">
+    <table id="tasksTable" role="grid">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Car</th>
+          <th>Station</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>In station</th>
+          <th>Period</th>
+          <th>Date</th>
+          <th>Assigned</th>
+          <th>Interested</th>
+          <th>Destination</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>33652</td>
+          <td>HA911YF (GLA)</td>
+          <td>Les Halles</td>
+          <td>Customer delivery</td>
+          <td class="status"><span class="status-assign">To assign</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>Before 20/09/25 00:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble bubble2">+</span></div>
+          </td>
+          <td>
+            <div class="bubbles"><span class="bubble">GT</span></div>
+          </td>
+          <td>Place d’Italie</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>33960</td>
+          <td>GH656YQ (Serie 2)</td>
+          <td>Les Halles</td>
+          <td>Customer delivery</td>
+          <td class="status"><span class="status-assign">To assign</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>Before 20/09/25 00:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble bubble2">+</span></div>
+          </td>
+          <td></td>
+          <td>Neuilly</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>33967</td>
+          <td>GR249HX (X2)</td>
+          <td>Gare de Lyon</td>
+          <td>Customer delivery</td>
+          <td class="status"><span class="status-assign">To assign</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>Before 20/09/25 00:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble bubble2">+</span></div>
+          </td>
+          <td></td>
+          <td>Les Halles</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>33845</td>
+          <td>GV205JC (Formentor)</td>
+          <td>Marbeuf</td>
+          <td class="recovery">Customer recovery</td>
+          <td class="status"><span class="status-todo">To do</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>From 20/09/25 02:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble">GT</span></div>
+          </td>
+          <td>
+            <div class="bubbles"><span class="bubble">BS</span><span class="bubble">FB</span><span
+                class="bubble">SC</span></div>
+          </td>
+          <td>Les Halles</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>34011</td>
+          <td>GK777RT (Model 3)</td>
+          <td>Les Halles</td>
+          <td>Customer delivery</td>
+          <td class="status"><span class="status-todo">To do</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>Before 20/09/25 09:30</td>
+          <td>
+            <div class="bubbles"><span class="bubble">HK</span></div>
+          </td>
+          <td>
+            <div class="bubbles"><span class="bubble">GT</span><span class="bubble">AT</span></div>
+          </td>
+          <td>La Défense</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>34012</td>
+          <td>GM120SC (Serie 1)</td>
+          <td>La Défense</td>
+          <td class="recovery">Customer recovery</td>
+          <td class="status"><span class="status-assign">To assign</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>From 20/09/25 10:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble bubble2">+</span></div>
+          </td>
+          <td></td>
+          <td>Orly</td>
+          <td>Terminal 2</td>
+        </tr>
+        <tr>
+          <td>34015</td>
+          <td>HB101AB (208)</td>
+          <td>Les Halles</td>
+          <td>Customer delivery</td>
+          <td class="status"><span class="status-todo">To do</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>Before 20/09/25 11:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble">SC</span></div>
+          </td>
+          <td>
+            <div class="bubbles"><span class="bubble">FC</span></div>
+          </td>
+          <td>Saint-Denis</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>34018</td>
+          <td>FB767GT (Classe A)</td>
+          <td>Neuilly</td>
+          <td class="recovery">Customer recovery</td>
+          <td class="status"><span class="status-assign">To assign</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>From 20/09/25 13:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble bubble2">+</span></div>
+          </td>
+          <td>
+            <div class="bubbles"><span class="bubble">AR</span><span class="bubble">BS</span></div>
+          </td>
+          <td>Roissy CDG</td>
+          <td>Terminal 1</td>
+        </tr>
+        <tr>
+          <td>34022</td>
+          <td>GD100AA (Serie 1)</td>
+          <td>Gare du Nord</td>
+          <td>Customer delivery</td>
+          <td class="status"><span class="status-assign">To assign</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>Before 20/09/25 15:00</td>
+          <td>
+            <div class="bubbles"><span class="bubble bubble2">+</span></div>
+          </td>
+          <td></td>
+          <td>Customers adress</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>34025</td>
+          <td>GR150YW (Model 3)</td>
+          <td>Les Halles</td>
+          <td class="recovery">Customer recovery</td>
+          <td class="status"><span class="status-todo">To do</span></td>
+          <td><span class="dot-red"></span></td>
+          <td>Tomorrow</td>
+          <td>From 20/09/25 17:30</td>
+          <td>
+            <div class="bubbles"><span class="bubble">FB</span></div>
+          </td>
+          <td>
+            <div class="bubbles"><span class="bubble">HK</span></div>
+          </td>
+          <td>Orly Airport</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
