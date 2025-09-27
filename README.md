@@ -1,7 +1,6 @@
-1.Search Bar (Functionality not yet implemented.)
+1. Search Bar (Functionality not yet implemented.)
 Allows users to refine filtered content by typing car plate numbers.
 Intended to support quick identification of tasks related to specific vehicles.
- 
 2.  “Interested” Column
 Displays bubbles containing initials of conveyors interested in a task.
 Offers a visual cue for engagement.
