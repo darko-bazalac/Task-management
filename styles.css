@@ -26,7 +26,7 @@ th.sorted-desc::after {
   font-size: 0.7em;
 }
 
-/* ✅ Row highlighting */
+/* Row highlighting */
 tbody tr:hover {
   background-color: #b0f8d4 !important;
   transition: background 0.2s ease;
@@ -54,7 +54,7 @@ tbody tr:hover {
 .dot-red {
   height: 12px;
   width: 12px;
-  background-color: red;
+  background-color: rgb(21, 147, 48);
   border-radius: 50%;
   display: inline-block;
 }
@@ -102,6 +102,13 @@ tbody tr:hover {
 }
 
 .filters {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 10px 20px;
+  z-index: 1000;
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
