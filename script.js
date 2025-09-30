@@ -3,20 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchBox");
   const tbody = document.querySelector("#tasksTable tbody");
 
-  searchInput.addEventListener("keyup", () => {
+  // Debounce function
+  function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
+  function filterTable() {
     const search = searchInput.value.toLowerCase();
-    console.log("Keyup");
+    console.log("Filtering...");
     Array.from(tbody.querySelectorAll("tr")).forEach(row => {
       const carCell = row.querySelector("td:nth-child(2)");
       const carText = carCell.textContent.toLowerCase();
-      if (carText.includes(search)) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
-      }
+      row.style.display = carText.includes(search) ? "" : "none";
     });
-  });
+  }
+
+  searchInput.addEventListener("keyup", debounce(filterTable, 600));
 });
+
 //Assigned Counter
 function updateAssigneeCounter() {
   const table = document.getElementById("tasksTable");

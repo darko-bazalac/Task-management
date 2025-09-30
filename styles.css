@@ -17,22 +17,12 @@ table {
   max-width: 100%;
 }
 
-th {
+.bkgid {
   cursor: pointer;
 }
 
-th.sorted-asc::after {
-  content: " ▲";
-  font-size: 0.7em;
-}
-th.sorted-desc::after {
-  content: " ▼";
-  font-size: 0.7em;
-}
-
-/* Row highlighting */
 tbody tr:hover {
-  background-color: #b0f8d4 !important;
+  background-color: #eafffa !important;
   transition: background 0.2s ease;
 }
 
@@ -102,7 +92,7 @@ tbody tr:hover {
 }
 
 .bubble:first-child {
-  margin-left: 0;
+  margin-left: 1rem;
 }
 
 .filters {
@@ -189,7 +179,7 @@ tbody tr:hover {
   font-weight: bold;
   display: inline-block !important;
   width: auto !important;
-  background-color: #007bff;
+  background-color: #2ee4b9;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -198,7 +188,7 @@ tbody tr:hover {
 }
 
 .create-task-btn:hover {
-  background-color: #0056b3;
+  background-color: #57f4d0;
 }
 .stats-container {
   display: grid;
@@ -282,4 +272,28 @@ tbody tr:hover {
   font-size: 12px;
   cursor: pointer;
   color: #444;
+}
+.notification {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.4rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
 }
