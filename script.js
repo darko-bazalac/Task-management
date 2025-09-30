@@ -1,15 +1,14 @@
+//Search funcionality
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
+  const searchInput = document.getElementById("searchBox");
   const tbody = document.querySelector("#tasksTable tbody");
 
   searchInput.addEventListener("keyup", () => {
     const search = searchInput.value.toLowerCase();
-
+    console.log("Keyup");
     Array.from(tbody.querySelectorAll("tr")).forEach(row => {
-      const carCell = row.querySelector("td:nth-child(2)"); // Car column
+      const carCell = row.querySelector("td:nth-child(2)");
       const carText = carCell.textContent.toLowerCase();
-
-      // Show row if search matches any part of car cell (plate or model)
       if (carText.includes(search)) {
         row.style.display = "";
       } else {
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
+//Assigned Counter
 function updateAssigneeCounter() {
   const table = document.getElementById("tasksTable");
   const tbody = table.querySelector("tbody");
@@ -96,7 +95,7 @@ function updateAssigneeCounter() {
       container.appendChild(bubble);
     });
 }
-
+//Assigne and deassigne
 function enableAssignment() {
   const table = document.getElementById("tasksTable");
   const tbody = table.querySelector("tbody");
@@ -105,8 +104,8 @@ function enableAssignment() {
     if (!e.target.classList.contains("bubble")) return;
 
     const clickedBubble = e.target;
-    const row = clickedBubble.closest("tr"); // define row first
-    const statusCell = row.querySelector("td.status"); // find the status cell
+    const row = clickedBubble.closest("tr");
+    const statusCell = row.querySelector("td.status");
     const initials = clickedBubble.innerText.trim();
     const assigneeCell = row.querySelector("td:nth-child(9) .bubbles");
     const interestedCell = row.querySelector("td:nth-child(10) .bubbles");
@@ -114,7 +113,7 @@ function enableAssignment() {
       .querySelector(".bubble")
       .innerText.trim();
 
-    // ✅ Case 1: Click on Interested bubble → Assign
+    // Case 1: Click on Interested bubble → Assign
     if (interestedCell.contains(clickedBubble)) {
       if (confirm(`Assign task to ${initials}?`)) {
         if (currentAssignee !== "+") {
@@ -123,30 +122,23 @@ function enableAssignment() {
           oldBubble.textContent = currentAssignee;
           interestedCell.appendChild(oldBubble);
         }
-
         assigneeCell.innerHTML = `<span class="bubble">${initials}</span>`;
         clickedBubble.remove();
-
-        // ✅ update status
         setStatus(statusCell, "To do");
 
         updateAssigneeCounter();
       }
     }
 
-    // ✅ Case 2: Click on Assignee bubble → Remove
+    //Case 2: Click on Assignee bubble → Remove
     else if (assigneeCell.contains(clickedBubble) && initials !== "+") {
       if (confirm(`Remove assignment from ${initials}?`)) {
         const oldBubble = document.createElement("span");
         oldBubble.className = "bubble";
         oldBubble.textContent = initials;
         interestedCell.appendChild(oldBubble);
-
         assigneeCell.innerHTML = `<span class="bubble bubble2">+</span>`;
-
-        // ✅ revert status
         setStatus(statusCell, "To assign");
-
         updateAssigneeCounter();
       }
     }
@@ -159,8 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 function setStatus(statusCell, newStatus) {
   if (!statusCell) return;
-
-  // find the <span> inside the cell
   let span = statusCell.querySelector("span");
   if (!span) {
     span = document.createElement("span");
@@ -179,64 +169,3 @@ function setStatus(statusCell, newStatus) {
     span.classList.add("status-todo");
   }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  enableAssignment();
-  updateAssigneeCounter();
-
-  const modal = document.getElementById("taskModal");
-  const btn = document.getElementById("createTaskBtn");
-  const span = modal.querySelector(".close");
-  const form = document.getElementById("taskForm");
-  const tbody = document.querySelector("#tasksTable tbody");
-
-  // Open modal
-  btn.onclick = () => {
-    modal.style.display = "block";
-  };
-
-  // Close modal
-  span.onclick = () => {
-    modal.style.display = "none";
-  };
-  window.onclick = e => {
-    if (e.target === modal) modal.style.display = "none";
-  };
-
-  // Submit form
-  form.onsubmit = e => {
-    e.preventDefault();
-
-    const station = document.getElementById("stationInput").value;
-    const car = document.getElementById("carInput").value;
-    const type = document.getElementById("typeInput").value;
-    const destination = document.getElementById("destinationInput").value;
-
-    // Generate random ID
-    const id = Math.floor(10000 + Math.random() * 90000);
-
-    // Default values
-    const status = `<span class="status-assign">To assign</span>`;
-    const period = new Date().toLocaleDateString();
-
-    // Create new row
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${id}</td>
-      <td>${car}</td>
-      <td>${station}</td>
-      <td>${type}</td>
-      <td class="status">${status}</td>
-      <td><span class="dot-red"></span></td>
-      <td>Today</td>
-      <td>${period}</td>
-      <td><div class="bubbles"><span class="bubble bubble2">+</span></div></td>
-      <td><div class="bubbles"></div></td>
-      <td>${destination}</td>
-      <td></td>
-    `;
-
-    tbody.appendChild(row);
-    modal.style.display = "none";
-    form.reset();
-  };
-});

@@ -3,7 +3,7 @@ body {
 }
 
 table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
   margin-top: 1rem;
   cursor: default;
@@ -11,6 +11,10 @@ table {
 .container {
   margin: 0;
   padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 th {
@@ -172,21 +176,6 @@ tbody tr:hover {
   flex-wrap: nowrap;
 }
 
-.filters label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 500;
-}
-
-.filter-actions {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.filter-actions button {
-  padding: 0.5rem 1rem;
-}
 .recovery {
   font-weight: bold;
 }
@@ -198,14 +187,14 @@ tbody tr:hover {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
-  display: inline-block !important; /* force override */
-  width: auto !important; /* don't stretch */
+  display: inline-block !important;
+  width: auto !important;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  white-space: nowrap; /* keeps button only as wide as text */
+  white-space: nowrap;
 }
 
 .create-task-btn:hover {
@@ -220,7 +209,7 @@ tbody tr:hover {
   padding: 0 20px;
   width: 100%;
   position: relative;
-  left: 50%; /* remove parent padding */
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -276,4 +265,21 @@ tbody tr:hover {
 }
 .icon.check {
   background: #e5f0ff;
+}
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 12px;
+  background: #fff;
+  margin-bottom: -1.5rem;
+  width: fit-content;
+}
+
+.filter-icon {
+  font-size: 12px;
+  cursor: pointer;
+  color: #444;
 }
