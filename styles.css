@@ -123,7 +123,22 @@ tbody tr:hover {
   margin-right: 1rem;
   margin-left: 8rem;
 }
+.assignee-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0px;
+  font-weight: bold;
+  font-size: 16px;
+}
 
+.assignee-stats .stat.interested {
+  color: #007bff; /* blue */
+}
+
+.assignee-stats .stat.assigned {
+  color: #28a745; /* green */
+}
 .assignee-bubble {
   position: relative;
   width: 48px;
