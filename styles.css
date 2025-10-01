@@ -133,11 +133,11 @@ tbody tr:hover {
 }
 
 .assignee-stats .stat.interested {
-  color: #007bff; /* blue */
+  color: #3b9ad8;
 }
 
 .assignee-stats .stat.assigned {
-  color: #28a745; /* green */
+  color: #fa0100;
 }
 .assignee-bubble {
   position: relative;
