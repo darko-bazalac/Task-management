@@ -29,8 +29,8 @@
 
 - Customer recovery is bolded to be easily distinguished from delivery.
 
-**7. Message icon**
+**7. Message icon linked to ID**
 
 - Notifies us when there is a text message related to a specific booking
 - It is separate from tagging and only appears if a text message exists.
-- Ensures that we don’t miss important details or discussions that happened while we were offline.
+- Ensures that we don’t miss important details or discussions that happened while we were offline or getting lost in spam.
