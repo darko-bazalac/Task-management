@@ -73,6 +73,11 @@ tbody tr:hover {
   font-weight: bold;
   border: 2px solid #fff;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.bubble:hover {
+  transform: translateY(-3px);
 }
 
 .bubble2 {
@@ -101,9 +106,11 @@ tbody tr:hover {
   left: 0;
   width: 100%;
   background: #fff;
-  padding: 10px 20px;
+  padding: 6px 20px;
   z-index: 1000;
   margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
   border-bottom: 2px solid rgb(251, 247, 247);
   display: flex;
   justify-content: space-between;
@@ -301,6 +308,11 @@ tbody tr:hover {
   justify-content: center;
   font-size: 14px;
   color: #333;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+.notification:hover {
+  transform: translateY(-3px);
 }
 
 .notification .badge {
