@@ -104,17 +104,21 @@ tbody tr:hover {
   padding: 10px 20px;
   z-index: 1000;
   margin-bottom: 1rem;
+  border-bottom: 2px solid rgb(251, 247, 247);
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: nowrap;
   align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .filters input,
 .filters select {
   max-width: 250px;
 }
+
 .assignee-counter {
   display: flex;
   justify-content: flex-end;
@@ -123,13 +127,13 @@ tbody tr:hover {
   margin-right: 1rem;
   margin-left: 8rem;
 }
+
 .assignee-stats {
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 4px 8px;
+  padding: 3px 10px;
   gap: 0px;
-  font-weight: bold;
   font-size: 16px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -150,6 +154,7 @@ tbody tr:hover {
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  margin-top: 3px;
   background-color: #3498db;
   color: white;
   font-weight: bold;
@@ -181,13 +186,6 @@ tbody tr:hover {
   justify-content: center;
   font-weight: bold;
   border: 2px solid white;
-}
-.filters {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-end;
-  margin-bottom: 1rem;
-  flex-wrap: nowrap;
 }
 
 .recovery {
