@@ -5,7 +5,7 @@
 - Enhances speed and responsiveness by avoiding redundant data operations.
 - Ideal for narrowing down results without disrupting the current filter context.
 
-**2. Assignee & Interested Counters**
+**2. Assigned & Interested Counters**
 
 - Displays the number of distinct people listed in the Interested column and currently assigned to tasks.
 - Helps visualize workload distribution across team members
@@ -35,8 +35,8 @@
 - It is separate from tagging and only appears if a text message exists.
 - Ensures that we don’t miss important details or discussions that happened while we were offline or getting lost in spam.
 
-**8. Assignee Bubble Filtering**
+**8. Assigned Bubble Filtering**
 
-- Filtering the task table by clicking on the assignee bubbles in the counter section at the top.
-- Clicking a bubble will filter the task list to show only tasks assigned to that person.Clicking the same bubble again will deselect it and reset the table to show all tasks.
+- Filtering the task table by clicking on the assigned bubbles in the counter section at the top.
+- Clicking a bubble will filter the task list to show only tasks assigned to that person. Clicking the same bubble again will deselect it and reset the table to show all tasks.
 - This makes it easy to quickly see the workload of a specific person, without using the search box or scrolling through the whole table.
