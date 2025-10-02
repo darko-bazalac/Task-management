@@ -34,3 +34,9 @@
 - Notifies us when there is a text message related to a specific booking
 - It is separate from tagging and only appears if a text message exists.
 - Ensures that we don’t miss important details or discussions that happened while we were offline or getting lost in spam.
+
+**8. Assignee Bubble Filtering**
+
+- Filtering the task table by clicking on the assignee bubbles in the counter section at the top.
+- Clicking a bubble will filter the task list to show only tasks assigned to that person.Clicking the same bubble again will deselect it and reset the table to show all tasks.
+- This makes it easy to quickly see the workload of a specific person, without using the search box or scrolling through the whole table.

@@ -158,6 +158,7 @@ tbody tr:hover {
 }
 .assignee-bubble {
   position: relative;
+  cursor: pointer;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -171,8 +172,24 @@ tbody tr:hover {
   font-size: 1rem;
   transition: transform 0.2s ease;
 }
+
 .assignee-bubble:hover {
   transform: translateY(-3px);
+}
+
+.assignee-bubble.selected {
+  border: 2px solid red;
+}
+
+.assignee-bubble.selected::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid red;
 }
 .assignee-bubble .bubble-text {
   z-index: 1;
@@ -197,6 +214,7 @@ tbody tr:hover {
 
 .recovery {
   font-weight: bold;
+  width: fit-content;
 }
 
 .create-task-btn {
