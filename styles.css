@@ -55,8 +55,8 @@ tbody tr:hover {
 
 /* Interested bubbles */
 .bubbles {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .bubble {
@@ -89,15 +89,11 @@ tbody tr:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0px;
+  margin-left: -6px;
   font-size: 0.8rem;
   font-weight: bold;
   border: 2px solid #fff;
   cursor: pointer;
-}
-
-.bubble:first-child {
-  margin-left: 1rem;
 }
 
 .filters {
