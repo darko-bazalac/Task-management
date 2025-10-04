@@ -39,4 +39,4 @@
 
 - Filtering the task table by clicking on the assigned bubbles in the counter section at the top.
 - Clicking a bubble will filter the task list to show only tasks assigned to that person. Clicking the same bubble again will deselect it and reset the table to show all tasks.
-- This makes it easy to quickly see the workload of a specific person, without using the search box or scrolling through the whole table.
+- This makes it easy to quickly see the workload of a specific person, without using the filter or scrolling through the whole table.
